@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>গবেষণার ইতিকথা - চক্রধাম</title>
+    <style>
+        /* --- CSS VARIABLES (MAIN THEME) --- */
+        :root {
+            --cosmic-dark: #0f172a;
+            --primary-blue: #1e3a8a;
+            --healing-teal: #0d9488;
+            --gold: #fbbf24;
+            --white: #ffffff;
+            --bg-paper: #fdfbf7; /* কাগজের মতো হালকা রঙ */
+            --text-main: #334155;
+        }
+
+        body {
+            font-family: 'SolaimanLipi', 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-paper);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* --- HEADER SECTION --- */
+        header {
+            background: linear-gradient(135deg, var(--cosmic-dark), var(--primary-blue));
+            padding: 20px;
+            text-align: center;
+            color: var(--white);
+            border-bottom: 4px solid var(--gold);
+            position: relative;
+        }
+        
+        /* Back Button */
+        .back-btn {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border: 1px solid var(--gold);
+            padding: 8px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .back-btn:hover { background: var(--gold); color: black; }
+
+        h1 { margin: 0; font-size: 2rem; }
+        .subtitle { font-size: 1rem; color: var(--gold); letter-spacing: 1px; }
+
+        /* --- MAIN CONTAINER --- */
+        .paper-container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            border-top: 10px solid var(--healing-teal);
+        }
+
+        /* --- INFOGRAPHIC SECTIONS --- */
+        .section-title {
+            color: var(--primary-blue);
+            border-left: 5px solid var(--gold);
+            padding-left: 15px;
+            margin-top: 40px;
+            font-size: 1.5rem;
+        }
+
+        /* 1. Timeline Style */
+        .timeline-box {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+            align-items: center;
+            background: #f1f5f9;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .time-badge {
+            background: var(--cosmic-dark);
+            color: var(--gold);
+            padding: 15px;
+            border-radius: 50%;
+            font-weight: bold;
+            height: 60px;
+            width: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            flex-shrink: 0;
+            border: 2px solid var(--gold);
+        }
+
+        /* 2. Feature Grid (Icons) */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .feature-card {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            transition: transform 0.2s;
+        }
+        .feature-card:hover { transform: translateY(-5px); border-color: var(--healing-teal); }
+        .icon { font-size: 2.5rem; margin-bottom: 10px; display: block; }
+
+        /* 3. Quote Box */
+        .highlight-box {
+            background: rgba(13, 148, 136, 0.1);
+            border-left: 5px solid var(--healing-teal);
+            padding: 20px;
+            margin: 30px 0;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: var(--cosmic-dark);
+        }
+
+        /* 4. Comparison Table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        .comparison-table th { background-color: var(--primary-blue); color: white; }
+
+        /* --- FOOTER --- */
+        .footer-note {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 0.9rem;
+            color: #64748b;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .paper-container { padding: 20px; margin: 10px; }
+            .timeline-box { flex-direction: column; text-align: center; }
+            h1 { font-size: 1.5rem; }
+            .back-btn { position: static; display: inline-block; margin-bottom: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="back-btn">🔙 ফিরে যান</a>
+        <h1>গবেষণার ইতিকথা</h1>
+        <div class="subtitle">CHAKRADHAM RESEARCH PAPER (2019 - 2026)</div>
+    </header>
+
+    <div class="paper-container">
+
+        <h2 class="section-title">১. গবেষণার সূচনা ও পটভূমি</h2>
+        <div class="timeline-box">
+            <div class="time-badge">৫-৭<br>বছর</div>
+            <div>
+                <p>
+                    আমাদের এই গবেষণা শুরু হয়েছিল ভারতীয় ঋষি পরম্পরা এবং আধুনিক বিজ্ঞানের এক মেলবন্ধন ঘটানোর লক্ষ্যে। 
+                    দীর্ঘ <strong>৫ থেকে ৭ বছর</strong> ধরে নিরলস সাধনা ও পরীক্ষার মাধ্যমে আমরা এই সিদ্ধান্তে উপনীত হয়েছি যে, 
+                    প্রকৃতির পঞ্চভূত তরঙ্গই মানুষের আরোগ্যের মূল চাবিকাঠি।
+                </p>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            "শরীর শুধু হাড়-মাংসের খাঁচা নয়, এটি একটি শক্তি ক্ষেত্র (Energy Field)। যখন এই শক্তি বা 'Cosmic Power' কমে যায়, তখনই রোগ বাসা বাঁধে।"
+        </div>
+
+        <h2 class="section-title">২. প্রযুক্তির মূল ভিত্তি: জিরো এনার্জি</h2>
+        <p>এই প্রজেক্টের সবচেয়ে বড় সাফল্য হলো <strong>'Zero Energy Concept'</strong>-এর বাস্তবায়ন।</p>
+        
+        <div class="feature-grid">
+            <div class="feature-card">
+                <span class="icon">🔋</span>
+                <h3>বিদ্যুৎবিহীন</h3>
+                <p>কোনো ইলেকট্রিক পাওয়ার, ব্যাটারি বা প্লাগ পয়েন্ট লাগে না।</p>
+            </div>
+            <div class="feature-card">
+                <span class="icon">⚙️</span>
+                <h3>মোটরবিহীন</h3>
+                <p>কোনো যান্ত্রিক মোটর বা কৃত্রিম ভাইব্রেশন ব্যবহার করা হয় না।</p>
+            </div>
+            <div class="feature-card">
+                <span class="icon">🌿</span>
+                <h3>১০০% প্রাকৃতিক</h3>
+                <p>পরিবেশবান্ধব উপাদান এবং কসমিক জ্যামিতি ব্যবহার করে তৈরি।</p>
+            </div>
+        </div>
+
+        <h2 class="section-title">৩. কসমিক হিলিং-এর কার্যপদ্ধতি</h2>
+        <p>আমাদের মেশিনটি মূলত একটি <strong>'Power Transformation Device'</strong> হিসেবে কাজ করে।</p>
+        
+        <ul style="list-style-type: square; padding-left: 20px; margin-top: 15px;">
+            <li><strong>ধাপ ১ (ফোকাস):</strong> রোগী একটি নির্দিষ্ট বিন্দুতে একাগ্র চিত্তে তাকিয়ে থাকেন (মেডিটেশন)।</li>
+            <li><strong>ধাপ ২ (সংযোগ):</strong> মেশিনের 'Power Point'-এ হাত রাখার সাথে সাথে শরীরের সার্কিট সম্পূর্ণ হয়।</li>
+            <li><strong>ধাপ ৩ (প্রবাহ):</strong> পঞ্চভূত তরঙ্গ (মাটি, জল, আগুন, বায়ু, আকাশ) শরীরে প্রবেশ করে।</li>
+            <li><strong>ধাপ ৪ (নিরাময়):</strong> এই তরঙ্গ শরীরের প্রতিটি কোষে (Cell) পৌঁছে শক্তি বা 'Power' ব্যালেন্স করে।</li>
+        </ul>
+
+        <h2 class="section-title">৪. সাধারণ চিকিৎসা বনাম কসমিক থেরাপি</h2>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>বৈশিষ্ট্য</th>
+                    <th>সাধারণ ইলেকট্রনিক থেরাপি</th>
+                    <th>চক্রধাম কসমিক থেরাপি</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>শক্তির উৎস</td>
+                    <td>কৃত্রিম বিদ্যুৎ / ব্যাটারি</td>
+                    <td>মহাজাগতিক প্রাকৃতিক শক্তি</td>
+                </tr>
+                <tr>
+                    <td>পার্শ্বপ্রতিক্রিয়া</td>
+                    <td>রেডিয়েশনের ঝুঁকি থাকে</td>
+                    <td>সম্পূর্ণ পার্শ্বপ্রতিক্রিয়াহীন</td>
+                </tr>
+                <tr>
+                    <td>প্রভাব</td>
+                    <td>সাময়িক আরাম দেয়</td>
+                    <td>আত্মা ও মনের গভীর থেকে নিরাময়</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 class="section-title">৫. ভবিষ্যৎ পরিকল্পনা</h2>
+        <p>
+            আমরা বর্তমানে এই প্রযুক্তিকে আরও সহজলভ্য করার কাজ করছি। ভবিষ্যতে প্রতিটি ঘরে যাতে একটি করে 
+            'মিনি কসমিক ইউনিট' পৌঁছে দেওয়া যায়, সেই লক্ষ্যে আমাদের গবেষণা অব্যাহত রয়েছে।
+        </p>
+
+        <div class="footer-note">
+            © ২০২৬ চক্রধাম রিসার্চ উইং | সর্বস্বত্ব সংরক্ষিত<br>
+            গবেষণা পত্র নং: CRW-2026-01
+        </div>
+
+    </div>
+
+</body>
+</html>

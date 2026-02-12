@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chakradham Cosmic Healing Station</title>
+    <style>
+        /* --- CSS VARIABLES & THEME --- */
+        :root {
+            --cosmic-dark: #0f172a;
+            --primary-blue: #1e3a8a;
+            --healing-teal: #0d9488;
+            --gold: #fbbf24;
+            --white: #ffffff;
+            --bg-light: #f8fafc;
+            --text-main: #334155;
+            --sidebar-width: 260px;
+        }
+
+        body {
+            font-family: 'SolaimanLipi', 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            transition: 0.3s;
+            overflow-x: hidden;
+        }
+
+        /* --- HEADER --- */
+        header {
+            background-color: var(--cosmic-dark);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            border-bottom: 2px solid var(--gold);
+        }
+
+        /* Logo Design */
+        .logo-area { display: flex; align-items: center; gap: 15px; }
+        .logo-img {
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+            border: 2px solid var(--gold);
+            filter: brightness(1.3) contrast(1.2) drop-shadow(0 0 8px var(--gold));
+            background-color: transparent; 
+        }
+        .logo-text h1 { margin: 0; font-size: 1.5rem; letter-spacing: 1px; color: var(--white); text-transform: uppercase; }
+        
+        /* Subtitle Cleaned */
+        .custom-subtitle {
+            font-size: 16px; 
+            color: rgb(214, 184, 184);
+        }
+
+        /* Back Button Style */
+        .back-btn {
+            background: #fff; 
+            border: 1px solid #fff;
+            color: black(--white);
+            padding: 3px 5px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: 0.3s;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .back-btn:hover { background: #dc2626; }
+
+        /* --- TICKER --- */
+        .ticker-wrap {
+            background-color: var(--healing-teal);
+            color: white;
+            padding: 7px;
+            font-size: 20px;
+            border-radius: 2px;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .ticker-item {
+            display: inline-block;
+            animation: scroll-text 35s linear infinite; 
+            font-weight: bold;
+        }
+        @keyframes scroll-text {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* --- LAYOUT --- */
+        .app-container { display: flex; min-height: calc(100vh - 120px); }
+
+        /* Sidebar */
+        .sidebar {
+            width: var(--sidebar-width);
+            background-color: var(--white);
+            border-right: 1px solid #e2e8f0;
+            padding: 16px 0;
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 0;
+        }
+        .sidebar button {
+            background: transparent;
+            border: none;
+            color: var(--text-main);
+            padding: 15px 25px;
+            text-align: left;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            display: flex; align-items: center; gap: 10px;
+        }
+        .sidebar button:hover {
+            background-color: #f1f5f9;
+            color: var(--primary-blue);
+            border-left: 5px solid var(--healing-teal);
+            padding-left: 30px;
+        }
+
+        /* Main Content */
+        .main-content { flex: 1; padding: 15px 25px; overflow-y: auto; }
+
+        /* Card */
+        .card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+        }
+        .card h2 { color: var(--primary-blue); margin-top: 0; border-bottom: 2px solid #f1f5f9; padding-bottom: 10px; font-size: 1.3rem; }
+
+        /* Research Button */
+        .research-btn {
+            background: linear-gradient(90deg, var(--primary-blue), var(--cosmic-dark));
+            color: white;
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin-bottom: 25px;
+            margin-top: 0;
+            box-shadow: 0 4px 15px rgba(30, 58, 138, 0.3);
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+        .research-btn:hover { transform: scale(1.02); }
+
+        /* Gallery/Scroll Styles */
+        .scroll-container {
+            overflow: hidden;
+            white-space: nowrap;
+            background: #f1f5f9;
+            padding: 15px;
+            border-radius: 8px;
+            position: relative;
+        }
+        .scroll-track {
+            display: inline-block;
+            animation: scroll-left 25s linear infinite;
+        }
+        .scroll-track:hover { animation-play-state: paused; }
+
+        .gallery-img, .device-card {
+            display: inline-block;
+            width: 220px;
+            height: 180px;
+            background-color: #fff;
+            margin-right: 20px;
+            border-radius: 10px;
+            vertical-align: top;
+            text-align: center;
+            border: 2px solid #e2e8f0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .img-placeholder {
+            height: 120px;
+            background-color: #cbd5e1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #fff;
+        }
+        .caption {
+            padding: 10px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            white-space: normal;
+            line-height: 1.2;
+        }
+
+        @keyframes scroll-left {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* Media Player */
+        .media-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .media-box { background: #f8fafc; border: 1px solid #e2e8f0; padding: 15px; border-radius: 8px; text-align: center; }
+
+        /* Meditation Section */
+        #meditation-section { text-align: center; border: 2px dashed var(--gold); padding: 30px; background: rgba(251, 191, 36, 0.05); }
+        .size-btn { margin: 5px; cursor: pointer; border: none; background: var(--healing-teal); color: white; border-radius: 5px; font-weight: bold; }
+
+        /* Contact Section */
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .btn-call { background: var(--primary-blue); color: rgb(255, 255, 255); text-align: center; padding: 15px; border-radius: 8px; text-decoration: none; font-weight: bold; display: block; }
+        .btn-wa { background: #25D366; color: white; text-align: center; padding: 15px; border-radius: 8px; text-decoration: none; font-weight: bold; display: block; }
+
+        /* Focus Overlay */
+        #focus-screen { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: white; z-index: 5000; justify-content: center; align-items: center; flex-direction: column; cursor: none; }
+        .focus-dot { background: black; border-radius: 50%; }
+
+        /* Success Modal Styles */
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 6000; justify-content: center; align-items: center; }
+        .modal-content { background: var(--white); padding: 40px; border-radius: 15px; max-width: 500px; text-align: center; border-top: 5px solid var(--gold); }
+
+        /* Responsive */
+        @media (max-width: 768px) { .app-container { flex-direction: column; } .sidebar { width: 100%; height: auto; flex-direction: row; overflow-x: auto; } .sidebar button { min-width: 150px; } .media-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-area">
+            <img src="chakra.jpg" alt="Cosmic Chakra Logo" class="logo-img">
+            <div class="logo-text">
+                <h1>CHAKRADHAM</h1>
+                <span class="custom-subtitle">কসমিক হিলিং স্টেশন</span>
+            </div>
+        </div>
+        <button class="back-btn" onclick="location.href='https://chakra-login-app.vercel.app/'">
+            🔙 Back
+        </button>
+    </header>
+
+    <div class="ticker-wrap">
+        <div class="ticker-item" id="ticker-content">Loading...</div>
+    </div>
+
+    <div class="app-container">
+        
+        <nav class="sidebar" id="sidebar-menu">
+            </nav>
+
+        <main class="main-content">
+            
+            <button class="research-btn" onclick="window.location.href='gobeshona.html'">
+                📖 গবেষণার বিস্তারিত জানতে ক্লিক করুন
+            </button>
+
+            <div class="card">
+                <h2>চিকিৎসার ফলাফল (Before & After)</h2>
+                <div class="scroll-container">
+                    <div class="scroll-track" id="treatment-gallery">
+                        </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>অডিও ও ভিডিও বার্তা</h2>
+                <div class="media-grid">
+                    <div class="media-box">
+                        <div style="font-size: 3rem;">▶️</div>
+                        <p><strong> ভিডিও বার্তা</strong></p>
+                        <button style="padding:5px 15px; cursor:pointer;">চালু করুন</button>
+                    </div>
+                    <div class="media-box">
+                        <div style="font-size: 3rem;">🔊</div>
+                        <p><strong>অডিও বার্তা</strong></p>
+                        <audio controls style="width: 100%; height: 30px;">
+                            <source src="chakra.mp3" type="audio/mp3">
+                        </audio>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>কসমিক হিলিং মেশিন (ডিভাইস অ্যালবাম)</h2>
+                <p>এটি গত ৫-৭ বছরের গবেষণার ফসল। এটি 'Zero Energy' প্রযুক্তিতে তৈরি, যা সম্পূর্ণ বিদ্যুৎবিহীন। মোটর ও ব্যাটারি ছাড়া তৈরি, সম্পূর্ণ প্রাকৃতিক হওয়ায় এই থেরাপি আপনাদের সার্বিক উপকার করে।</p>
+                <div class="scroll-container">
+                    <div class="scroll-track" id="device-gallery" style="animation-duration: 30s;">
+                        </div>
+                </div>
+            </div>
+
+            <div class="card" id="meditation-section">
+                <h3>মেডিটেশন ও ফোকাস টেস্ট</h3>
+                <p>বিন্দুর আকার নির্বাচন করুন এবং ১ মিনিট ফোকাস করুন:</p>
+                <div style="margin: 20px 0px;">
+                    <button class="size-btn" onclick="startFocus(10)" style="padding: 17px; font-size: 18px;">ছোট (Small)</button>
+                    <button class="size-btn" onclick="startFocus(25)" style="padding: 16px; font-size: 19px;">মাঝারি (Medium)</button>
+                    <button class="size-btn" onclick="startFocus(50)" style="padding: 20px; font-size: 21px;">বড় (Large)</button>
+                </div>
+                <small>⚠️ টেস্ট শুরু হলে মিউজিক বাজবে</small>
+            </div>
+
+            <div class="card">
+                <h2>যোগাযোগ করুন</h2>
+                <div class="contact-grid">
+                    <a href="tel:+916296378080" class="btn-call">📞 কল করুন</a>
+                    <a href="https://wa.me/916296378080" class="btn-wa">💬 WhatsApp</a>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <div id="focus-screen">
+        <div id="active-dot" class="focus-dot"></div>
+        <audio id="bg-music" loop>
+            <source src="chakra.mp3" type="audio/mp3">
+        </audio>
+    </div>
+
+    <div id="success-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div style="font-size: 3rem; color: var(--gold);">ॐ</div>
+            <h2 style="color:var(--healing-teal);">অভিনন্দন!</h2>
+            <p style="font-size: 1.1rem; line-height: 1.6; color: #444;">
+                অভিনন্দন আপনি এক মিনিট একাগ্রতার সাথে ধ্যান বিন্দুতে মগ্ন থাকতে পেরেছেন। 
+                <br><br>
+                অভিনন্দন আপনি <strong>CHAKRADHAM</strong> এ কসমিক হিলিং নেওয়ার জন্য একজন আদর্শ ব্যক্তি। 
+                এই থেরাপি নেওয়ার জন্য সংস্থার contact number এ সম্পর্ক করতে পারেন।
+            </p>
+            <button onclick="closeModal('success-modal')" style="padding:10px 20px; background:var(--primary-blue); color:white; border:none; border-radius:5px; cursor:pointer; margin-top:15px;">ঠিক আছে</button>
+        </div>
+    </div>
+
+    <script>
+        // Fetch functions
+        fetch('ads.json').then(res => res.json()).then(data => {
+            document.getElementById('ticker-content').innerText = data.content;
+        }).catch(err => console.error("Error loading ads.json:", err));
+
+        fetch('menu.json').then(res => res.json()).then(data => {
+            const sidebarContainer = document.getElementById('sidebar-menu');
+            data.forEach(item => {
+                const btn = document.createElement('button');
+                btn.setAttribute('onclick', `location.href='${item.link}'`);
+                btn.innerHTML = `${item.icon} ${item.name}`;
+                sidebarContainer.appendChild(btn);
+            });
+        }).catch(err => console.error("Error loading menu.json:", err));
+
+        fetch('treatment.json').then(res => res.json()).then(data => {
+            const container = document.getElementById('treatment-gallery');
+            data.forEach(card => {
+                container.innerHTML += `
+                    <div class="gallery-img">
+                        <div class="img-placeholder">${card.icon}</div> 
+                        <div class="caption">${card.label_before}<br><span style="color:red; font-size:0.8rem;">সমস্যা: ${card.problem}</span></div>
+                    </div>
+                    <div class="gallery-img">
+                        <div class="img-placeholder">${card.icon}</div>
+                        <div class="caption">${card.label_after}<br><span style="color:green; font-size:0.8rem;">ফলাফল: ${card.result}</span></div>
+                    </div>`;
+            });
+        }).catch(err => console.error("Error loading treatment.json:", err));
+
+        fetch('device.json').then(res => res.json()).then(data => {
+            const container = document.getElementById('device-gallery');
+            data.forEach(device => {
+                container.innerHTML += `
+                    <div class="device-card">
+                        <div class="img-placeholder">${device.icon}</div>
+                        <div class="caption">${device.title}<br><span style="font-size:0.8rem; color:var(--healing-teal);">${device.subtitle}</span></div>
+                    </div>`;
+            });
+        }).catch(err => console.error("Error loading device.json:", err));
+
+        // Focus & Modal Functions
+        function closeModal(id) {
+            document.getElementById(id).style.display = 'none';
+        }
+
+        function startFocus(size) {
+            const screen = document.getElementById('focus-screen');
+            const dot = document.getElementById('active-dot');
+            const music = document.getElementById('bg-music');
+
+            dot.style.width = size + 'px';
+            dot.style.height = size + 'px';
+            screen.style.display = 'flex';
+            
+            music.volume = 0.5;
+            music.play().catch(e => console.log("Audio play blocked"));
+
+            setTimeout(() => {
+                screen.style.display = 'none';
+                music.pause();
+                music.currentTime = 0;
+                // Show Success Modal
+                document.getElementById('success-modal').style.display = 'flex';
+            }, 60000); 
+        }
+    </script>
+</body>
+</html>
