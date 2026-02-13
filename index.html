@@ -7,233 +7,75 @@
     <style>
         /* --- CSS VARIABLES & THEME --- */
         :root {
-            --cosmic-dark: #0f172a;
-            --primary-blue: #1e3a8a;
-            --healing-teal: #0d9488;
-            --gold: #fbbf24;
-            --white: #ffffff;
-            --bg-light: #f8fafc;
-            --text-main: #334155;
+            --cosmic-dark: #0f172a; --primary-blue: #1e3a8a; --healing-teal: #0d9488;
+            --gold: #fbbf24; --white: #ffffff; --bg-light: #f8fafc; --text-main: #334155;
             --sidebar-width: 260px;
         }
 
-        body {
-            font-family: 'SolaimanLipi', 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-light);
-            color: var(--text-main);
-            transition: 0.3s;
-            overflow-x: hidden;
-        }
+        body { font-family: 'SolaimanLipi', 'Arial', sans-serif; margin: 0; padding: 0; background-color: var(--bg-light); color: var(--text-main); transition: 0.3s; overflow-x: hidden; }
 
-        /* --- HEADER --- */
-        header {
-            background-color: var(--cosmic-dark);
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: var(--white);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-            border-bottom: 2px solid var(--gold);
-        }
-
-        /* Logo Design */
+        /* HEADER */
+        header { background-color: var(--cosmic-dark); padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; color: var(--white); position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.4); border-bottom: 2px solid var(--gold); }
         .logo-area { display: flex; align-items: center; gap: 15px; }
-        .logo-img {
-            height: 60px;
-            width: 60px;
-            border-radius: 50%;
-            border: 2px solid var(--gold);
-            filter: brightness(1.3) contrast(1.2) drop-shadow(0 0 8px var(--gold));
-            background-color: transparent; 
-        }
+        .logo-img { height: 60px; width: 60px; border-radius: 50%; border: 2px solid var(--gold); filter: brightness(1.3) contrast(1.2) drop-shadow(0 0 8px var(--gold)); background-color: transparent; }
         .logo-text h1 { margin: 0; font-size: 1.5rem; letter-spacing: 1px; color: var(--white); text-transform: uppercase; }
-        
-        /* Subtitle Cleaned */
-        .custom-subtitle {
-            font-size: 16px; 
-            color: rgb(214, 184, 184);
-        }
+        .custom-subtitle { font-size: 16px; color: rgb(214, 184, 184); }
 
-        /* Back Button Style */
-        .back-btn {
-            background: #fff; 
-            border: 1px solid #fff;
-            color: black(--white);
-            padding: 3px 5px;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            transition: 0.3s;
-            font-weight: bold;
-            text-decoration: none;
-        }
+        /* Back Button */
+        .back-btn { background: #ef4444; border: 1px solid #fff; color: var(--white); padding: 8px 15px; border-radius: 20px; cursor: pointer; font-size: 0.9rem; transition: 0.3s; font-weight: bold; text-decoration: none; }
         .back-btn:hover { background: #dc2626; }
 
-        /* --- TICKER --- */
-        .ticker-wrap {
-            background-color: var(--healing-teal);
-            color: white;
-            padding: 7px;
-            font-size: 20px;
-            border-radius: 2px;
-            overflow: hidden;
-            white-space: nowrap;
-        }
-        .ticker-item {
-            display: inline-block;
-            animation: scroll-text 35s linear infinite; 
-            font-weight: bold;
-        }
-        @keyframes scroll-text {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
-        }
+        /* TICKER */
+        .ticker-wrap { background-color: var(--healing-teal); color: white; padding: 3px; font-size: 17px; border-radius: 2px; overflow: hidden; white-space: nowrap; }
+        .ticker-item { display: inline-block; animation: scroll-text 40s linear infinite; font-weight: bold; }
+        @keyframes scroll-text { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
 
-        /* --- LAYOUT --- */
+        /* LAYOUT */
         .app-container { display: flex; min-height: calc(100vh - 120px); }
-
-        /* Sidebar */
-        .sidebar {
-            width: var(--sidebar-width);
-            background-color: var(--white);
-            border-right: 1px solid #e2e8f0;
-            padding: 16px 0;
-            display: flex;
-            flex-direction: column;
-            flex-shrink: 0;
-        }
-        .sidebar button {
-            background: transparent;
-            border: none;
-            color: var(--text-main);
-            padding: 15px 25px;
-            text-align: left;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.2s;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-            display: flex; align-items: center; gap: 10px;
-        }
-        .sidebar button:hover {
-            background-color: #f1f5f9;
-            color: var(--primary-blue);
-            border-left: 5px solid var(--healing-teal);
-            padding-left: 30px;
-        }
-
-        /* Main Content */
+        .sidebar { width: var(--sidebar-width); background-color: var(--white); border-right: 1px solid #e2e8f0; padding: 20px 0; display: flex; flex-direction: column; flex-shrink: 0; }
+        .sidebar button { background: transparent; border: none; color: var(--text-main); padding: 15px 25px; text-align: left; font-size: 1rem; cursor: pointer; transition: all 0.2s; border-bottom: 1px solid rgba(0,0,0,0.05); display: flex; align-items: center; gap: 10px; }
+        .sidebar button:hover { background-color: #f1f5f9; color: var(--primary-blue); border-left: 5px solid var(--healing-teal); padding-left: 30px; }
+        
         .main-content { flex: 1; padding: 15px 25px; overflow-y: auto; }
-
-        /* Card */
-        .card {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            border: 1px solid #e2e8f0;
-        }
+        .card { background: var(--white); border-radius: 12px; padding: 20px; margin-bottom: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; }
         .card h2 { color: var(--primary-blue); margin-top: 0; border-bottom: 2px solid #f1f5f9; padding-bottom: 10px; font-size: 1.3rem; }
 
-        /* Research Button */
-        .research-btn {
-            background: linear-gradient(90deg, var(--primary-blue), var(--cosmic-dark));
-            color: white;
-            width: 100%;
-            padding: 15px;
-            border: none;
-            border-radius: 8px;
-            font-size: 1.2rem;
-            cursor: pointer;
-            margin-bottom: 25px;
-            margin-top: 0;
-            box-shadow: 0 4px 15px rgba(30, 58, 138, 0.3);
-            text-transform: uppercase;
-            font-weight: bold;
-            transition: transform 0.2s;
-        }
+        .research-btn { background: linear-gradient(90deg, var(--primary-blue), var(--cosmic-dark)); color: white; width: 100%; padding: 15px; border: none; border-radius: 8px; font-size: 1.2rem; cursor: pointer; margin-bottom: 25px; margin-top: 0; box-shadow: 0 4px 15px rgba(30, 58, 138, 0.3); text-transform: uppercase; font-weight: bold; transition: transform 0.2s; }
         .research-btn:hover { transform: scale(1.02); }
 
-        /* Gallery/Scroll Styles */
-        .scroll-container {
-            overflow: hidden;
-            white-space: nowrap;
-            background: #f1f5f9;
-            padding: 15px;
-            border-radius: 8px;
-            position: relative;
-        }
-        .scroll-track {
-            display: inline-block;
-            animation: scroll-left 25s linear infinite;
-        }
+        /* Scroll Gallery */
+        .scroll-container { overflow: hidden; white-space: nowrap; background: #f1f5f9; padding: 15px; border-radius: 8px; position: relative; }
+        .scroll-track { display: inline-block; animation: scroll-left 25s linear infinite; }
         .scroll-track:hover { animation-play-state: paused; }
+        .gallery-img, .device-card { display: inline-block; width: 220px; height: 180px; background-color: #fff; margin-right: 20px; border-radius: 10px; vertical-align: top; text-align: center; border: 2px solid #e2e8f0; box-shadow: 0 2px 5px rgba(0,0,0,0.05); position: relative; overflow: hidden; }
+        .img-placeholder { height: 120px; background-color: #cbd5e1; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: #fff; }
+        .caption { padding: 10px; font-size: 0.9rem; font-weight: bold; white-space: normal; line-height: 1.2; }
+        @keyframes scroll-left { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
 
-        .gallery-img, .device-card {
-            display: inline-block;
-            width: 220px;
-            height: 180px;
-            background-color: #fff;
-            margin-right: 20px;
-            border-radius: 10px;
-            vertical-align: top;
-            text-align: center;
-            border: 2px solid #e2e8f0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .img-placeholder {
-            height: 120px;
-            background-color: #cbd5e1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: #fff;
-        }
-        .caption {
-            padding: 10px;
-            font-size: 0.9rem;
-            font-weight: bold;
-            white-space: normal;
-            line-height: 1.2;
-        }
-
-        @keyframes scroll-left {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-100%); }
-        }
-
-        /* Media Player */
+        /* MEDIA PLAYER STYLE */
         .media-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
         .media-box { background: #f8fafc; border: 1px solid #e2e8f0; padding: 15px; border-radius: 8px; text-align: center; }
-
-        /* Meditation Section */
+        
+        /* Video Container: Default black background for MP4s */
+        .video-container { width: 100%; height: 200px; border-radius: 8px; overflow: hidden; background: #000; display: none; margin-bottom: 10px; }
+        
+        /* Playlist Buttons */
+        .playlist { display: flex; flex-direction: column; gap: 5px; max-height: 150px; overflow-y: auto; text-align: left; margin-top: 10px; }
+        .play-btn { background: white; border: 1px solid #ddd; padding: 8px; border-radius: 5px; cursor: pointer; transition: 0.2s; font-size: 0.9rem; display: flex; align-items: center; gap: 8px; }
+        .play-btn:hover { background: var(--healing-teal); color: white; border-color: var(--healing-teal); }
+        
+        /* Focus & Modal */
         #meditation-section { text-align: center; border: 2px dashed var(--gold); padding: 30px; background: rgba(251, 191, 36, 0.05); }
         .size-btn { margin: 5px; cursor: pointer; border: none; background: var(--healing-teal); color: white; border-radius: 5px; font-weight: bold; }
-
-        /* Contact Section */
         .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
         .btn-call { background: var(--primary-blue); color: rgb(255, 255, 255); text-align: center; padding: 15px; border-radius: 8px; text-decoration: none; font-weight: bold; display: block; }
         .btn-wa { background: #25D366; color: white; text-align: center; padding: 15px; border-radius: 8px; text-decoration: none; font-weight: bold; display: block; }
 
-        /* Focus Overlay */
         #focus-screen { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: white; z-index: 5000; justify-content: center; align-items: center; flex-direction: column; cursor: none; }
         .focus-dot { background: black; border-radius: 50%; }
-
-        /* Success Modal Styles */
         .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 6000; justify-content: center; align-items: center; }
         .modal-content { background: var(--white); padding: 40px; border-radius: 15px; max-width: 500px; text-align: center; border-top: 5px solid var(--gold); }
 
-        /* Responsive */
         @media (max-width: 768px) { .app-container { flex-direction: column; } .sidebar { width: 100%; height: auto; flex-direction: row; overflow-x: auto; } .sidebar button { min-width: 150px; } .media-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
@@ -247,9 +89,7 @@
                 <span class="custom-subtitle">কসমিক হিলিং স্টেশন</span>
             </div>
         </div>
-        <button class="back-btn" onclick="location.href='https://chakra-login-app.vercel.app/'">
-            🔙 Back
-        </button>
+        <button class="back-btn" onclick="location.href='https://chakra-login-app.vercel.app/'">🔙 Back</button>
     </header>
 
     <div class="ticker-wrap">
@@ -270,26 +110,36 @@
             <div class="card">
                 <h2>চিকিৎসার ফলাফল (Before & After)</h2>
                 <div class="scroll-container">
-                    <div class="scroll-track" id="treatment-gallery">
-                        </div>
+                    <div class="scroll-track" id="treatment-gallery"></div>
                 </div>
             </div>
 
             <div class="card">
                 <h2>অডিও ও ভিডিও বার্তা</h2>
                 <div class="media-grid">
+                    
                     <div class="media-box">
-                        <div style="font-size: 3rem;">▶️</div>
-                        <p><strong> ভিডিও বার্তা</strong></p>
-                        <button style="padding:5px 15px; cursor:pointer;">চালু করুন</button>
+                        <div id="video-placeholder">
+                            <div style="font-size: 3rem;">▶️</div>
+                            <p><strong>ভিডিও বার্তা</strong></p>
+                            <button onclick="playFirstVideo()" style="padding:5px 15px; cursor:pointer;">চালু করুন</button>
+                        </div>
+                        
+                        <div class="video-container" id="video-container"></div>
+
+                        <p style="margin:5px 0 0 0; font-weight:bold; color:var(--primary-blue); font-size:0.9rem;">ভিডিও তালিকা:</p>
+                        <div class="playlist" id="video-list"></div>
                     </div>
+
                     <div class="media-box">
                         <div style="font-size: 3rem;">🔊</div>
-                        <p><strong>অডিও বার্তা</strong></p>
-                        <audio controls style="width: 100%; height: 30px;">
-                            <source src="chakra.mp3" type="audio/mp3">
+                        <audio id="main-audio" controls style="width: 100%; height: 40px; margin-bottom: 10px;">
+                            <source src="" type="audio/mp3">
                         </audio>
+                        <p style="margin:5px 0 0 0; font-weight:bold; color:var(--primary-blue); font-size:0.9rem;">অডিও তালিকা:</p>
+                        <div class="playlist" id="audio-list"></div>
                     </div>
+
                 </div>
             </div>
 
@@ -297,8 +147,7 @@
                 <h2>কসমিক হিলিং মেশিন (ডিভাইস অ্যালবাম)</h2>
                 <p>এটি গত ৫-৭ বছরের গবেষণার ফসল। এটি 'Zero Energy' প্রযুক্তিতে তৈরি, যা সম্পূর্ণ বিদ্যুৎবিহীন। মোটর ও ব্যাটারি ছাড়া তৈরি, সম্পূর্ণ প্রাকৃতিক হওয়ায় এই থেরাপি আপনাদের সার্বিক উপকার করে।</p>
                 <div class="scroll-container">
-                    <div class="scroll-track" id="device-gallery" style="animation-duration: 30s;">
-                        </div>
+                    <div class="scroll-track" id="device-gallery" style="animation-duration: 30s;"></div>
                 </div>
             </div>
 
@@ -346,10 +195,84 @@
     </div>
 
     <script>
-        // Fetch functions
+        // Global variable to store video list
+        let videoData = [];
+
+        // --- 1. FETCH VIDEO JSON ---
+        fetch('video.json')
+            .then(res => res.json())
+            .then(videos => {
+                videoData = videos || [];
+                const videoListDiv = document.getElementById('video-list');
+
+                if(videoData.length > 0) {
+                    videoData.forEach((video) => {
+                        const btn = document.createElement('button');
+                        btn.className = 'play-btn';
+                        btn.innerHTML = `▶ ${video.title}`;
+                        btn.onclick = function() { playVideo(video.url); };
+                        videoListDiv.appendChild(btn);
+                    });
+                }
+            })
+            .catch(err => console.error("Video JSON Error:", err));
+
+        // --- 2. FETCH AUDIO JSON ---
+        fetch('audio.json')
+            .then(res => res.json())
+            .then(audios => {
+                const audioListDiv = document.getElementById('audio-list');
+                const audioPlayer = document.getElementById('main-audio');
+
+                if(audios && audios.length > 0) {
+                    audioPlayer.src = audios[0].url; // Set first audio
+                    audios.forEach((audio) => {
+                        const btn = document.createElement('button');
+                        btn.className = 'play-btn';
+                        btn.innerHTML = `🎵 ${audio.title}`;
+                        btn.onclick = function() {
+                            audioPlayer.src = audio.url;
+                            audioPlayer.play();
+                        };
+                        audioListDiv.appendChild(btn);
+                    });
+                }
+            })
+            .catch(err => console.error("Audio JSON Error:", err));
+
+
+        // --- 3. VIDEO PLAYER LOGIC (Handles MP4 & YouTube) ---
+        function playVideo(url) {
+            if(!url) { alert("ভিডিও লিংক পাওয়া যায়নি!"); return; }
+            
+            // UI Toggle
+            document.getElementById('video-placeholder').style.display = 'none';
+            const container = document.getElementById('video-container');
+            container.style.display = 'block';
+            
+            // Logic: Is it MP4 or YouTube?
+            // Checking for common video extensions or raw github links
+            if (url.includes('.mp4') || url.includes('.webm')) {
+                // Direct Video File
+                container.innerHTML = `
+                    <video src="${url}" controls autoplay style="width:100%; height:100%; object-fit:cover; background:black;">
+                        আপনার ব্রাউজার ভিডিও সাপোর্ট করছে না।
+                    </video>`;
+            } else {
+                // YouTube or Embed
+                container.innerHTML = `<iframe src="${url}" allow="autoplay; encrypted-media" allowfullscreen style="width:100%; height:100%; border:none;"></iframe>`;
+            }
+        }
+
+        function playFirstVideo() {
+            if(videoData.length > 0) { playVideo(videoData[0].url); } 
+            else { alert("কোনো ভিডিও লোড হয়নি!"); }
+        }
+
+        // --- 4. OTHER FETCH CALLS (Ads, Menu, Galleries) ---
         fetch('ads.json').then(res => res.json()).then(data => {
             document.getElementById('ticker-content').innerText = data.content;
-        }).catch(err => console.error("Error loading ads.json:", err));
+        }).catch(err => console.error("Ads Error"));
 
         fetch('menu.json').then(res => res.json()).then(data => {
             const sidebarContainer = document.getElementById('sidebar-menu');
@@ -359,7 +282,7 @@
                 btn.innerHTML = `${item.icon} ${item.name}`;
                 sidebarContainer.appendChild(btn);
             });
-        }).catch(err => console.error("Error loading menu.json:", err));
+        }).catch(err => console.error("Menu Error"));
 
         fetch('treatment.json').then(res => res.json()).then(data => {
             const container = document.getElementById('treatment-gallery');
@@ -374,7 +297,7 @@
                         <div class="caption">${card.label_after}<br><span style="color:green; font-size:0.8rem;">ফলাফল: ${card.result}</span></div>
                     </div>`;
             });
-        }).catch(err => console.error("Error loading treatment.json:", err));
+        }).catch(err => console.error("Treatment Error"));
 
         fetch('device.json').then(res => res.json()).then(data => {
             const container = document.getElementById('device-gallery');
@@ -385,9 +308,9 @@
                         <div class="caption">${device.title}<br><span style="font-size:0.8rem; color:var(--healing-teal);">${device.subtitle}</span></div>
                     </div>`;
             });
-        }).catch(err => console.error("Error loading device.json:", err));
+        }).catch(err => console.error("Device Error"));
 
-        // Focus & Modal Functions
+        // --- 5. FOCUS TEST LOGIC ---
         function closeModal(id) {
             document.getElementById(id).style.display = 'none';
         }
@@ -408,7 +331,6 @@
                 screen.style.display = 'none';
                 music.pause();
                 music.currentTime = 0;
-                // Show Success Modal
                 document.getElementById('success-modal').style.display = 'flex';
             }, 60000); 
         }
