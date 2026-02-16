@@ -1,23 +1,23 @@
 [
   {
-    "icon": "https://raw.githubusercontent.com/nabendudebnathbharatiya-bot/My-app-assets2/main/Html/Cancer-tumor-casestudy/age.jpg",
-    "label_before": "রোগী ১ (আগে)",
-    "problem": "ক্যান্সার/টিউমার",
-    "label_after": "রোগী ১ (পরে)",
-    "result": "সুস্থ জীবন"
+    "icon": "<img src='https://raw.githubusercontent.com/nabendudebnathbharatiya-bot/My-app-assets2/main/images/Chakra-ad/Gemini_Generated_Image_b8ujhsb8ujhsb8uj.png' style='width:100%; height:100%; object-fit:cover;'>",
+    "label_before": "চিকিৎসার পূর্বে",
+    "problem": "পুরানো হাঁটুর ব্যথা",
+    "label_after": "চিকিৎসার পরে",
+    "result": "৯০% ব্যথা মুক্ত"
   },
   {
-    "icon": "👵",
-    "label_before": "রোগী ২ (আগে)",
-    "problem": "আর্থ্রাইটিস",
-    "label_after": "রোগী ২ (পরে)",
-    "result": "ব্যাথামুক্ত"
+    "icon": "<img src='https://raw.githubusercontent.com/nabendudebnathbharatiya-bot/My-app-assets2/main/images/Chakra-ad/Gemini_Generated_Image_b8ujhsb8ujhsb8uj.png' style='width:100%; height:100%; object-fit:cover;'>",
+    "label_before": "চিকিৎসার পূর্বে",
+    "problem": "মাইগ্রেন সমস্যা",
+    "label_after": "চিকিৎসার পরে",
+    "result": "সম্পূর্ণ সুস্থ"
   },
   {
-    "icon": "👦",
-    "label_before": "রোগী ৩ (আগে)",
-    "problem": "ইনসোমনিয়া",
-    "label_after": "রোগী ৩ (পরে)",
-    "result": "গভীর ঘুম"
+    "icon": "<img src='https://raw.githubusercontent.com/nabendudebnathbharatiya-bot/My-app-assets2/main/images/Chakra-ad/Gemini_Generated_Image_b8ujhsb8ujhsb8uj.png' style='width:100%; height:100%; object-fit:cover;'>",
+    "label_before": "চিকিৎসার পূর্বে",
+    "problem": "স্পন্ডালাইটিস",
+    "label_after": "চিকিৎসার পরে",
+    "result": "স্বাভাবিক জীবনযাপন"
   }
 ]
