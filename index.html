@@ -199,7 +199,7 @@
         let videoData = [];
 
         // --- 1. FETCH VIDEO JSON ---
-        fetch('video.json')
+        fetch('video.json?t=' + Date.now())
             .then(res => res.json())
             .then(videos => {
                 videoData = videos || [];
@@ -218,7 +218,7 @@
             .catch(err => console.error("Video JSON Error:", err));
 
         // --- 2. FETCH AUDIO JSON ---
-        fetch('audio.json')
+        fetch('audio.json?t=' + Date.now())
             .then(res => res.json())
             .then(audios => {
                 const audioListDiv = document.getElementById('audio-list');
@@ -243,7 +243,7 @@
 
         // --- 3. VIDEO PLAYER LOGIC (Handles MP4 & YouTube) ---
         function playVideo(url) {
-            if(!url) { alert("ভিডিও লিংক পাওয়া যায়নি!"); return; }
+            if(!url) { alert("ভিডিও লিংক পাওয়া যায়নি!"); return; }
             
             // UI Toggle
             document.getElementById('video-placeholder').style.display = 'none';
@@ -266,15 +266,15 @@
 
         function playFirstVideo() {
             if(videoData.length > 0) { playVideo(videoData[0].url); } 
-            else { alert("কোনো ভিডিও লোড হয়নি!"); }
+            else { alert("কোনো ভিডিও লোড হয়নি!"); }
         }
 
         // --- 4. OTHER FETCH CALLS (Ads, Menu, Galleries) ---
-        fetch('ads.json').then(res => res.json()).then(data => {
+        fetch('ads.json?t=' + Date.now()).then(res => res.json()).then(data => {
             document.getElementById('ticker-content').innerText = data.content;
         }).catch(err => console.error("Ads Error"));
 
-        fetch('menu.json').then(res => res.json()).then(data => {
+        fetch('menu.json?t=' + Date.now()).then(res => res.json()).then(data => {
             const sidebarContainer = document.getElementById('sidebar-menu');
             data.forEach(item => {
                 const btn = document.createElement('button');
@@ -284,7 +284,7 @@
             });
         }).catch(err => console.error("Menu Error"));
 
-        fetch('treatment.json').then(res => res.json()).then(data => {
+        fetch('treatment.json?t=' + Date.now()).then(res => res.json()).then(data => {
             const container = document.getElementById('treatment-gallery');
             data.forEach(card => {
                 container.innerHTML += `
@@ -299,7 +299,7 @@
             });
         }).catch(err => console.error("Treatment Error"));
 
-        fetch('device.json').then(res => res.json()).then(data => {
+        fetch('device.json?t=' + Date.now()).then(res => res.json()).then(data => {
             const container = document.getElementById('device-gallery');
             data.forEach(device => {
                 container.innerHTML += `
@@ -336,4 +336,4 @@
         }
     </script>
 </body>
-</html>
+        </html>
