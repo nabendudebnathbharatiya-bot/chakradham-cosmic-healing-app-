@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
     <title>গবেষণার ইতিকথা - চক্রধাম</title>
     <style>
         /* --- CSS VARIABLES (MAIN THEME) --- */
@@ -12,8 +17,11 @@
             --healing-teal: #0d9488;
             --gold: #fbbf24;
             --white: #ffffff;
-            --bg-paper: #fdfbf7; /* কাগজের মতো হালকা রঙ */
+            --bg-paper: #fdfbf7;
             --text-main: #334155;
+            --warning-bg: #fef2f2;
+            --warning-border: #ef4444;
+            --warning-text: #7f1d1d;
         }
 
         body {
@@ -142,6 +150,37 @@
         }
         .comparison-table th { background-color: var(--primary-blue); color: white; }
 
+        /* 5. Results List */
+        .results-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .results-list li {
+            background: #f8fafc;
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 3px solid var(--healing-teal);
+        }
+
+        /* 6. Disclaimer Box */
+        .disclaimer-box {
+            background-color: var(--warning-bg);
+            border-left: 5px solid var(--warning-border);
+            padding: 20px;
+            margin-top: 40px;
+            border-radius: 0 5px 5px 0;
+        }
+        .disclaimer-box h3 {
+            color: #b91c1c;
+            margin-top: 0;
+            font-size: 1.2rem;
+        }
+        .disclaimer-box p {
+            margin-bottom: 0;
+            color: var(--warning-text);
+        }
+
         /* --- FOOTER --- */
         .footer-note {
             text-align: center;
@@ -176,30 +215,30 @@
             <div class="time-badge">৫-৭<br>বছর</div>
             <div>
                 <p>
-                    আমাদের এই গবেষণা শুরু হয়েছিল ভারতীয় ঋষি পরম্পরা এবং আধুনিক বিজ্ঞানের এক মেলবন্ধন ঘটানোর লক্ষ্যে। 
-                    দীর্ঘ <strong>৫ থেকে ৭ বছর</strong> ধরে নিরলস সাধনা ও পরীক্ষার মাধ্যমে আমরা এই সিদ্ধান্তে উপনীত হয়েছি যে, 
+                    আমাদের এই গবেষণা শুরু হয়েছিল ভারতীয় ঋষি পরম্পরা এবং আধুনিক বিজ্ঞানের এক মেলবন্ধন ঘটানোর লক্ষ্যে। 
+                    দীর্ঘ <strong>৫ থেকে ৭ বছর</strong> ধরে নিরলস সাধনা ও পরীক্ষার মাধ্যমে আমরা এই সিদ্ধান্তে উপনীত হয়েছি যে, 
                     প্রকৃতির পঞ্চভূত তরঙ্গই মানুষের আরোগ্যের মূল চাবিকাঠি।
                 </p>
             </div>
         </div>
 
         <div class="highlight-box">
-            "শরীর শুধু হাড়-মাংসের খাঁচা নয়, এটি একটি শক্তি ক্ষেত্র (Energy Field)। যখন এই শক্তি বা 'Cosmic Power' কমে যায়, তখনই রোগ বাসা বাঁধে।"
+            "শরীর শুধু হাড়-মাংসের খাঁচা নয়, এটি একটি শক্তি ক্ষেত্র (Energy Field)। যখন এই শক্তি বা 'Cosmic Power' কমে যায়, তখনই রোগ বাসা বাঁধে।"
         </div>
 
         <h2 class="section-title">২. প্রযুক্তির মূল ভিত্তি: জিরো এনার্জি</h2>
-        <p>এই প্রজেক্টের সবচেয়ে বড় সাফল্য হলো <strong>'Zero Energy Concept'</strong>-এর বাস্তবায়ন।</p>
+        <p>এই প্রজেক্টের সবচেয়ে বড় সাফল্য হলো <strong>'Zero Energy Concept'</strong>-এর বাস্তবায়ন।</p>
         
         <div class="feature-grid">
             <div class="feature-card">
                 <span class="icon">🔋</span>
                 <h3>বিদ্যুৎবিহীন</h3>
-                <p>কোনো ইলেকট্রিক পাওয়ার, ব্যাটারি বা প্লাগ পয়েন্ট লাগে না।</p>
+                <p>কোনো ইলেকট্রিক পাওয়ার, ব্যাটারি বা প্লাগ পয়েন্ট লাগে না।</p>
             </div>
             <div class="feature-card">
                 <span class="icon">⚙️</span>
                 <h3>মোটরবিহীন</h3>
-                <p>কোনো যান্ত্রিক মোটর বা কৃত্রিম ভাইব্রেশন ব্যবহার করা হয় না।</p>
+                <p>কোনো যান্ত্রিক মোটর বা কৃত্রিম ভাইব্রেশন ব্যবহার করা হয় গঠন করা হয় না।</p>
             </div>
             <div class="feature-card">
                 <span class="icon">🌿</span>
@@ -212,11 +251,15 @@
         <p>আমাদের মেশিনটি মূলত একটি <strong>'Power Transformation Device'</strong> হিসেবে কাজ করে।</p>
         
         <ul style="list-style-type: square; padding-left: 20px; margin-top: 15px;">
-            <li><strong>ধাপ ১ (ফোকাস):</strong> রোগী একটি নির্দিষ্ট বিন্দুতে একাগ্র চিত্তে তাকিয়ে থাকেন (মেডিটেশন)।</li>
-            <li><strong>ধাপ ২ (সংযোগ):</strong> মেশিনের 'Power Point'-এ হাত রাখার সাথে সাথে শরীরের সার্কিট সম্পূর্ণ হয়।</li>
-            <li><strong>ধাপ ৩ (প্রবাহ):</strong> পঞ্চভূত তরঙ্গ (মাটি, জল, আগুন, বায়ু, আকাশ) শরীরে প্রবেশ করে।</li>
-            <li><strong>ধাপ ৪ (নিরাময়):</strong> এই তরঙ্গ শরীরের প্রতিটি কোষে (Cell) পৌঁছে শক্তি বা 'Power' ব্যালেন্স করে।</li>
+            <li><strong>ধাপ ১ (ফোকাস):</strong> রোগী একটি নির্দিষ্ট বিন্দুতে একাগ্র চিত্তে তাকিয়ে থাকেন (মেডিটেশন)।</li>
+            <li><strong>ধাপ ২ (সংযোগ):</strong> মেশিনের 'Power Point'-এ হাত রাখার সাথে সাথে শরীরের সার্কিট সম্পূর্ণ হয়।</li>
+            <li><strong>ধাপ ৩ (প্রবাহ):</strong> পঞ্চভূত তরঙ্গ (মাটি, জল, আগুন, বায়ু, আকাশ) শরীরে প্রবেশ করে।</li>
+            <li><strong>ধাপ ৪ (নিরাময়):</strong> এই তরঙ্গ শরীরের প্রতিটি কোষে (Cell) পৌঁছে শক্তি বা 'Power' ব্যালেন্স করে।</li>
         </ul>
+
+        <div class="highlight-box" style="background: #fffbeb; border-color: #f59e0b; color: #92400e;">
+            <strong>গুরুত্বপূর্ণ নোট:</strong> এই মেডিটেশন করানোটা আমাদের কোনো মানসিক স্বস্তি বা একটি কায়দা হিসাবে রাখা হয়নি, এই পদ্ধতি এই চিকিৎসার প্রাণ। যদি মেডিটেশন ছাড়া কেউ পাওয়ার নেয়, সে ফল তো পায়ই না, উপরন্তু তার অশান্তি শুরু হয়।
+        </div>
 
         <h2 class="section-title">৪. সাধারণ চিকিৎসা বনাম কসমিক থেরাপি</h2>
         <table class="comparison-table">
@@ -234,23 +277,37 @@
                     <td>মহাজাগতিক প্রাকৃতিক শক্তি</td>
                 </tr>
                 <tr>
-                    <td>পার্শ্বপ্রতিক্রিয়া</td>
-                    <td>রেডিয়েশনের ঝুঁকি থাকে</td>
-                    <td>সম্পূর্ণ পার্শ্বপ্রতিক্রিয়াহীন</td>
+                    <td>পার্শ্বপ্রতিক্রিয়া</td>
+                    <td>রেডিয়েশনের ঝুঁকি থাকে</td>
+                    <td>সম্পূর্ণ পার্শ্বপ্রতিক্রিয়াহীন</td>
                 </tr>
                 <tr>
                     <td>প্রভাব</td>
-                    <td>সাময়িক আরাম দেয়</td>
-                    <td>আত্মা ও মনের গভীর থেকে নিরাময়</td>
+                    <td>সাময়িক আরাম দেয়</td>
+                    <td>আত্মা ও মনের গভীর থেকে নিরাময়</td>
                 </tr>
             </tbody>
         </table>
 
-        <h2 class="section-title">৫. ভবিষ্যৎ পরিকল্পনা</h2>
+        <h2 class="section-title">৫. প্রত্যক্ষ প্রমাণ ও ফলাফল</h2>
+        <p>বিভিন্ন দ্রব্যের সমন্বয়ে তৈরি এই পঞ্চভূত তরঙ্গ মানুষের বুদ্ধিমত্তা ও বৈদিক গবেষণামূলক তথ্য নির্ভর চিকিৎসা পদ্ধতি। কোনো যন্ত্র দিয়ে টেস্ট না করা হলেও, এই যন্ত্রের মাধ্যমে ৫-৭ বছর ধরে বিভিন্ন পাওয়ার থেরাপি দিয়ে আধুনিক চিকিৎসার প্যারামিটার অনুযায়ী যে ফলাফলগুলোর প্রত্যক্ষ প্রমাণ পাওয়া গেছে, তার কয়েকটি হলো:</p>
+        <ul class="results-list">
+            <li><strong>কেশ বৃদ্ধি:</strong> চুলের পরিমাণ বৃদ্ধি, দৈর্ঘ্য বৃদ্ধি, এবং টাক মাথায় চুল গজাচ্ছে। পাশাপাশি দাড়ি ও গোঁফও গজাচ্ছে।</li>
+            <li><strong>দাঁতের স্বাস্থ্য:</strong> দাঁত গজাচ্ছে এবং বিভিন্ন নড়া দাঁত শক্ত হচ্ছে।</li>
+            <li><strong>দৈহিক বিকাশ:</strong> যেকোনো বয়সের মানুষের দেহের দৈর্ঘ্য বা উচ্চতা বৃদ্ধি হচ্ছে।</li>
+            <li><strong>অভ্যন্তরীণ শক্তি ও ইমিউনিটি:</strong> মাংস, রক্ত, মজ্জা ও শুক্রের পরিমাণ এবং গুণমান বৃদ্ধি পাচ্ছে। সাথে ইমিউনিটি শক্তিও বৃদ্ধি হচ্ছে।</li>
+        </ul>
+
+        <h2 class="section-title">৬. ভবিষ্যৎ পরিকল্পনা</h2>
         <p>
             আমরা বর্তমানে এই প্রযুক্তিকে আরও সহজলভ্য করার কাজ করছি। ভবিষ্যতে প্রতিটি ঘরে যাতে একটি করে 
-            'মিনি কসমিক ইউনিট' পৌঁছে দেওয়া যায়, সেই লক্ষ্যে আমাদের গবেষণা অব্যাহত রয়েছে।
+            'মিনি কসমিক ইউনিট' পৌঁছে দেওয়া যায়, সেই লক্ষ্যে আমাদের গবেষণা অব্যাহত রয়েছে।
         </p>
+
+        <div class="disclaimer-box">
+            <h3>সতর্কবার্তা</h3>
+            <p>এগুলি CHAKRADHAM-এর নিজস্ব গবেষণা ভিত্তিক অভিজ্ঞতা। কেউ যদি এই চিকিৎসা নিতে চান, তাহলে সেটি হবে সম্পূর্ণ আপনার নিজস্ব সিদ্ধান্ত।</p>
+        </div>
 
         <div class="footer-note">
             © ২০২৬ চক্রধাম রিসার্চ উইং | সর্বস্বত্ব সংরক্ষিত<br>
