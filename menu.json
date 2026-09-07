@@ -1,6 +1,6 @@
 [
   { "name": "ড্যাশবোর্ড", "icon": "🏠", "link": "index.html" },
-  { "name": "রোগীর তথ্য", "icon": "🏥", "link": "patient_register.html" },
+  { "name": "রোগীর তথ্য", "icon": "🏥", "link": "https://nabendudebnathbharatiya-bot.github.io/webpage_gallery_directory_app/patient-data/index.html" },
   { "name": "কসমো পাওয়ার থেরাপি", "icon": "🧘", "link": "healing_session.html" },
   { "name": "ফর্ম ফিলাপ", "icon": "📅", "link": "booking.html" },
   { "name": "রোগীর কেস স্টাডি", "icon": "📊", "link": "reports.html" },
